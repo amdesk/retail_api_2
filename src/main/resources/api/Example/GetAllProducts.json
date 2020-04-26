@@ -1,0 +1,4 @@
+[
+  {"id": 1, "name": "Product1", "barcode": "b1", "rate": 4.5, "productCategory": "Category1"},
+  {"id": 2, "name": "Product1", "barcode": "b2", "rate": 4.47, "productCategory": "Category1"} 
+]

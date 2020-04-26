@@ -1,0 +1,14 @@
+[{
+  "id": 1,
+  "noOfItems": 1,
+  "totalCost": "5.50",
+  "totalTax": "1.25",
+  "totalValue": "6.75"
+},{
+  "id": 2,
+  "noOfItems": 2,
+  "totalCost": "15.50",
+  "totalTax": "11.25",
+  "totalValue": "26.75"
+}
+]

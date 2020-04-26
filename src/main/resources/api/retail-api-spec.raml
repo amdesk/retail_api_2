@@ -1,0 +1,144 @@
+#%RAML 1.0
+title: Retail API Specification
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/5696289b-1911-4755-a50f-ad03e041d602/ # baseUri: http://localhost
+version: 1.0
+types:
+  products: !include DataTypes/products.raml
+  bills: !include DataTypes/bills.raml
+  productCategory: !include DataTypes/productCategory.raml
+
+/products:
+  get:
+    description: fetches list of all product data
+    responses:
+      200:
+        body:
+          application/json:
+            type: products[]
+            example: !include Example/GetAllProducts.json
+  post:
+    description: Creates a new product based on request JSON
+    responses:
+      201:
+        body:
+          application/json:
+            example: {"creaded a new product successfully"}
+  /{id}:
+    uriParameters:
+      id:
+        required: true
+    get:
+      description: fetch a specific product
+      responses:
+        200:
+          body:
+            application/json:
+              type: products[]
+              example: !include Example/GetProduct.json
+    put:
+      description: updates product data based on request JSON
+      responses:
+        201:
+          body:
+            application/json:
+              example:
+                {"updated product data successfully"}
+    delete:
+      description: delete an existing product if it is not associated with a bill
+      responses:
+        200:
+          body:
+            application/json:
+              example: {"deleted product data successfully"}
+
+/bills:
+  get:
+    description: fetches all bill data
+    responses:
+      200:
+        body:
+          application/json:
+            type: bills[]
+            example: !include Example/GetAllBills.json
+  post:
+    description: creates a bill Id
+    responses:
+      201:
+        body:
+          application/json:
+            example: {"creaded a new bill successfully"}
+  /{id}:
+    uriParameters:
+      id:
+        required: true
+    get:
+      description: fetches bill of a particular id
+      responses:
+        200:
+          body:
+            application/json:
+              type: bills[]
+              example: !include Example/GetBill.json
+    put:
+      description: updates bill data
+      responses:
+        201:
+          body:
+            application/json:
+              example:
+                {"updated bill data sucessfully"}
+    delete:
+      description: delete bill from the system
+      responses:
+        200:
+          body:
+            application/json:
+              example: {"deleted bill data successfully"}
+
+/productCatagory:
+  get:
+    description: fetches list of all productcatagory data
+    responses:
+      200:
+        body:
+          application/json:
+            type: productCategory[]
+            example: !include Example/GetAllProductCategory.json
+  post:
+    description: creates a new productcatagory based on request JSON
+    responses:
+      201:
+        body:
+          application/json:
+            example: {"creaded a new productcategory successfully"}
+  /{id}:
+    uriParameters:
+      id:
+        required: true
+    get:
+      description: fetch a specific productcategory
+      responses:
+        200:
+          body:
+            application/json:
+              type: productCategory[]
+              example: !include Example/GetProductCategory.json
+    put:
+      description: Updates productcatagory data based on request JSON
+      responses:
+        201:
+          body:
+            application/json:
+              example:
+                {"updated productcategory data successfully"}
+    delete:
+      description: delete an existing productcategory
+      responses:
+        200:
+          body:
+            application/json:
+              example: {"deleted productcategory successfully"}
+  
+                
+          
+          
